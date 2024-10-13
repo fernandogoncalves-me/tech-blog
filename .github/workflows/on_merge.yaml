@@ -39,4 +39,4 @@ jobs:
         run: aws s3 sync ./public ${{ secrets.AWS_BUCKET_URI }} --delete
 
       - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ARN }} --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ID }} --paths "/*"
