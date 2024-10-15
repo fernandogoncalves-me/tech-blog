@@ -15,7 +15,7 @@ resource "aws_s3_bucket_policy" "hosting" {
     ])
   })
 
-  depends_on = [ aws_s3_bucket_public_access_block.hosting ]
+  depends_on = [aws_s3_bucket_public_access_block.hosting]
 }
 
 resource "aws_s3_bucket_website_configuration" "hosting" {
