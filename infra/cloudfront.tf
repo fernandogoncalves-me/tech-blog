@@ -8,7 +8,7 @@ resource "aws_cloudfront_distribution" "blog" {
   price_class         = "PriceClass_200"
 
   origin {
-    domain_name = aws_s3_bucket_website_configuration.hosting.website_endpoint
+    domain_name = "http://${aws_s3_bucket_website_configuration.hosting.website_endpoint}"
     origin_id   = local.s3_origin_id
   }
 
