@@ -27,3 +27,12 @@ resource "aws_s3_bucket_website_configuration" "hosting" {
     key = "error.html"
   }
 }
+
+resource "aws_s3_bucket_public_access_block" "hosting" {
+  bucket = aws_s3_bucket.hosting.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
