@@ -1,0 +1,18 @@
+terraform {
+  required_version = ">= 1.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.71"
+    }
+  }
+
+  cloud {
+    organization = "cloudtalents"
+
+    workspaces {
+      name = "tech-blog"
+    }
+  }
+}
